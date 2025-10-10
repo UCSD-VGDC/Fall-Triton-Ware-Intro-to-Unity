@@ -37,7 +37,7 @@ public class DemoPlayerMovement : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.UpArrow) && canJump)
         {
-            PlayerRB.velocity = new Vector2(PlayerRB.velocity.x, JumpStrength);
+            PlayerRB.linearVelocity = new Vector2(PlayerRB.linearVelocity.x, JumpStrength);
             canJump = false;
         }
     }
@@ -45,7 +45,7 @@ public class DemoPlayerMovement : MonoBehaviour
     // Sets the player's veolicty only in the sideways direction
     private void MoveSideways(Vector2 direction)
     {
-        PlayerRB.velocity = new Vector2(direction.x * Speed, PlayerRB.velocity.y);
+        PlayerRB.linearVelocity = new Vector2(direction.x * Speed, PlayerRB.linearVelocity.y);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -65,6 +65,6 @@ public class DemoPlayerMovement : MonoBehaviour
     private void Respawn()
     {
         transform.position = RespawnPoint.transform.position;
-        PlayerRB.velocity = Vector2.zero;
+        PlayerRB.linearVelocity = Vector2.zero;
     }
 }

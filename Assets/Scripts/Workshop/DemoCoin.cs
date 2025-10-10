@@ -19,7 +19,7 @@ public class DemoCoin : MonoBehaviour
     private void Collect()
     {
         // Launch the coin into the air
-        CoinRB.velocity = Vector2.up * 8f;
+        CoinRB.linearVelocity = Vector2.up * 8f;
         CoinRB.gravityScale = 2f;
 
         // Destroy its collider
